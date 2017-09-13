@@ -4,7 +4,9 @@
 (require 2htdp/universe)
 
 ; This program draws a car whose proportions
-; are all defined by its wheel radius.
+; are all defined by its wheel radius. Also,
+; its main feature resides on super high con-
+; centrations of gambiarras.
 
 ; Constants definitions
 (define WHEEL-RADIUS 5)
@@ -54,22 +56,32 @@
          (make-posn (/ (image-width CAR-FRAME) 2) (/ (image-height CAR-FRAME) 2)))
    CAR-FRAME))
 
+; Number -> Image
 ; Redering Function
+; receives a x position and spits the CAR
+; image on that position.
 (define (render x)
   (place-image CAR
                x
                WHEEL-RADIUS
                BACKGROUND))
 
+; Number -> Number
 ; Counter/Clock Updater
+; receives a number and subtracts 1 every
+; clock tick.
 (define (tock x)
   (- x 1))
 
+; Number -> Number
 ; Stop Condition
+; tests when its time to stop the ticks
 (define (when t)
   (<= t (/ (image-width BODY) 2)))
 
+; Number -> WorldEvent
 ; Main Funcion and World Listener
+; makes shit spin properly
 (define (main ws)
    (big-bang ws
      [on-tick tock]
