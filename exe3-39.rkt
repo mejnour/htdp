@@ -5,7 +5,7 @@
 
 ; This program draws a car whose proportions
 ; are all defined by its wheel radius. Also,
-; its main feature resides on super high con-
+; its main feature lies on unique con-
 ; centrations of gambiarras.
 
 ; Constants definitions
